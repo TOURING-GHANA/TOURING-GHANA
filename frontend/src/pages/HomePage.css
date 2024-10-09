@@ -1,0 +1,98 @@
+/* src/pages/HomePage.css */
+
+.homepage {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .hero {
+    background: url('banner.jpg') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .hero-content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero p {
+    margin: 20px 0;
+  }
+  
+  .cta-button {
+    background-color: #d4a276;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .search-section {
+    margin: 40px 0;
+    text-align: center;
+  }
+  
+  .search-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .featured-listings {
+    margin: 40px 0;
+  }
+  
+  .featured-listings h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .listings-grid {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .listings-grid .listing {
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .map-section {
+    margin: 40px 0;
+  }
+  
+  .map-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer {
+    background-color: #9d7454;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
