@@ -1,38 +1,114 @@
 
-
-
+/* General Navbar Styles */
 nav {
-    background-color: #d4a276;   
-    padding: 15px 30px;          
-  }
-  
-  
-  ul {
-    list-style: none;            
-    display: flex;               
-    margin: 0;                   
-    padding: 0;                  
-    justify-content: space-around; 
-    align-items: center;         
-  }
-  
-  
-  li {
-    margin: 0 15px;              
-  }
-  
-  
-  a {
-    text-decoration: none;      
-    color: white;               
-    padding: 10px 20px;          
-    background-color: #9d7454;   
-    border-radius: 5px;          
-    transition: background-color 0.3s ease; 
-  }
-  
+  background-color: #d4a276;   /* Light gold background */
+  padding: 15px 30px;          /* Padding for the navbar */
+  display: flex;                /* Use flexbox to align items */
+  justify-content: space-between; /* Space between the logo and menu items */
+  align-items: center;
+  position: relative;           /* Ensure absolute positioning works for mobile */
+}
 
-  a:hover {
-    background-color: #ebb88c;   
+/* Navbar list */
+ul {
+  list-style: none;             /* Remove default list styling */
+  display: flex;                 /* Use flexbox to display list items horizontally */
+  margin: 0;                     /* Remove default margin */
+  padding: 0;                    /* Remove default padding */
+  justify-content: space-around; /* Space out list items evenly */
+  align-items: center;          /* Vertically center the list items */
+  width: 100%;                   /* Ensure the ul takes full width */
+  max-width: 1200px;             /* Limit width on large screens */
+  transition: all 0.3s ease;     /* Smooth transition for mobile menu */
+}
+
+/* Navbar items */
+li {
+  margin: 0 15px;               /* Space between the items */
+}
+
+/* Navbar links */
+a {
+  text-decoration: none;        /* Remove underline from links */
+  color: white;                 /* Link text color */
+  padding: 10px 20px;           /* Padding around the link */
+  background-color: #D4A276;    /* Background color for the links */
+  border-radius: 5px;           /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect */
+a:hover {
+  background-color: #f7bf8e;     /* Light hover effect */
+}
+
+/* Mobile menu toggle - hamburger icon */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  z-index: 999;                 /* Ensure it overlaps the menu */
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease;     /* Add smooth transition for bars */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;              /* Show hamburger icon on mobile */
   }
+
+  /* Hide the navbar links on mobile initially */
+  .navbar-links {
+    display: none;              /* Hide links by default on mobile */
+    flex-direction: column;     /* Stack links vertically */
+    text-align: center;
+    background-color: #D4A276;  /* Background for the menu */
+    position: absolute;         /* Absolute positioning to place the menu */
+    top: 0;                     /* Align at the top of the viewport */
+    left: 0;                    /* Align left */
+    right: 0;                   /* Align right */
+    height: 30vh;               /* Take up 30% of the viewport height */
+    z-index: 998;               /* Ensure it overlays other content */
+    opacity: 0;                 /* Start with an opacity of 0 */
+    visibility: hidden;         /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
+  }
+
+  /* Active state when menu is open */
+  .navbar-links.active {
+    display: flex;              /* Show the menu when active */
+    opacity: 1;                 /* Fade in */
+    visibility: visible;        /* Make it visible */
+  }
+
+  li {
+    margin: 10px 0;             /* Space between items in mobile menu */
+  }
+
+  a {
+    padding: 12px 20px;
+    background-color: #D4A276;         /* Adjust padding for mobile links */
+  }
+
+  /* Hamburger menu active state (icon transformation) */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);  /* Top bar rotated */
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;                 /* Hide the middle bar */
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Bottom bar rotated */
+  }
+}
   
